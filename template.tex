@@ -1,0 +1,78 @@
+% !Mode:: "TeX:UTF-8"
+%% 请使用 XeLaTeX 编译本文. 默认使用 Adobe 字体. 需安装 Adobe fonts 文件夹中的字体.
+
+\documentclass[forlib]{HNUthesis}   % 选项 forprint: 交付打印时, 建议加上此选项, 以消除彩色链接文字, 避免彩色字迹打印偏淡.
+                                    % 选项 forlib: 提交给图书馆的电子版, 需要加上选项 forlib, 以消除空白页和彩色链接.
+
+\bibliographystyle{abbrv}           % 参考文献样式,  plain,unsrt,alpha,abbrv 等等 
+
+\graphicspath{{figures/}}           % 图片放在 figures 文件夹.
+
+
+\begin{document}
+
+\fenleihao{O159}  % 分类号
+\xuexiaodaima{10486}   % 学校代码
+\miji{绝密}           % 密级
+\xuehao{201408193}    % 学号
+
+\title{相对拓扑的若干性质研究}               % 论文名
+\Etitle{A \LaTeX~Thesis Template for HNU}   % 英文题目
+\author{高淑红}                             % 作者名
+\Csupervisor{卢涛\quad 教授}                % 指导教师中文名、职称
+\Cmajor{计算数学}                           % 专业中文名
+\Especiality{格上拓扑学}                    % 研究方向
+\date{二〇一五年三月}                       % 日期
+
+\maketitle
+
+\include{includefile/frontmatter}    % 加入英文封面
+\include{includefile/midmatter}      % 加入中英文摘要.
+
+\pdfbookmark[0]{目录}{toc}
+\tableofcontents
+\thispagestyle{empty}
+
+\frontmatter  % 前言部分
+
+\mainmatter   % 正文部分
+
+\baselineskip=21pt  % 正文行距为 20 磅
+
+\chapter{先说重要的}
+
+\section{具体使用步骤}
+
+步骤说明
+1. xxxx
+2. xxxxx
+3. xxxx
+
+\section{第二步骤}
+
+首先我们咋样
+
+%%%=== 参考文献 ========%%%
+\cleardoublepage\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{000}\zihao{5}
+
+  \bibitem{r1} 作者, 文章题目, 期刊名, 年份(期数): 起止页码
+
+  \bibitem{r2} 作者, 书名, 年份, 版次, 出版地: 出版单位, 起止页码
+
+  \bibitem{r3} 邓建松等, 《\LaTeXe~科技排版指南》, 科学出版社
+
+  \bibitem{r4} 吴凌云, 《CTeX~FAQ (常见问题集)》, \textit{Version~0.4}, June 21, 2004
+
+  \bibitem{r5} Herbert Vo\ss, Mathmode, \url{http://www.tex.ac.uk/ctan/info/math/voss/mathmode/Mathmode.pdf}.
+
+\end{thebibliography}
+
+
+
+\backmatter
+\include{includefile/backmatter} %%%致谢, 武汉大学学位论文使用授权协议书．
+
+\cleardoublepage
+\end{document}

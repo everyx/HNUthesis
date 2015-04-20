@@ -1,0 +1,17 @@
+### 说明
+
+为朋友制作的淮北师范的硕士学位论文模板
+
+### 使用方法
+
+
+1. 首先请安装 TexLive Full 最新版本，下载地址 
+   http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2014.iso
+
+2. 三个 bat 文件用来生成和清理文件，作用见文件名，双击运行即可
+
+3. 编辑时请使用 UTF-8 编码
+
+### 感谢
+
+1. [黄正华老师的武汉大学 LaTex 模板](http://aff.whu.edu.cn/huangzh/)
