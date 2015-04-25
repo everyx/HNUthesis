@@ -19,7 +19,7 @@
 %------------------------ Page layout ----------------------------------
 \hypersetup{pdfencoding=auto}
 \hypersetup{citecolor=magenta,linkcolor=blue}
-\RequirePackage[top=3.11cm,bottom=3.12cm,left=3.74cm,right=2.74cm]{geometry}    % 页面设置%
+\RequirePackage[top=2.5cm,bottom=2.5cm,left=3.5cm,right=3cm]{geometry}    % 页面设置%
 
 \newtoks\fenleihao      %分类号
 \newtoks\xuexiaodaima   %学校代码
@@ -87,9 +87,9 @@
 %------------------------ Abstract & Keywords -------------------------
 \newcommand\cnabstractname{摘要}
 \newcommand\enabstractname{ABSTRACT}
-\newcommand\cnkeywords[1]{ {\heiti\zihao{-4}\textbf{\cnkeywordsname: }}#1}
+\newcommand\cnkeywords[1]{ {\bfseries\heiti\zihao{-4}\cnkeywordsname: }#1}
 \newcommand\cnkeywordsname{关键词}
-\newcommand\enkeywords[1]{ {\bfseries\zihao{-4}\textbf{\enkeywordsname: }}#1}
+\newcommand\enkeywords[1]{ {\bfseries\heiti\zihao{-4}\enkeywordsname: }#1}
 \newcommand\enkeywordsname{Key words}
 
 \newenvironment{cnabstract}{
@@ -216,17 +216,30 @@
 
 \makeatother
 %---------------------------------------------------
-\renewcommand{\contentsname}{目\qquad 录}
+\renewcommand{\contentsname}{目\quad 录}
 \newcommand\acknowledgement{\backmatter\chapter[致谢]{\ziju{2}致谢}}
 
-
+\newcommand{\chuhao}{\fontsize{42bp}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36bp}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28bp}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21bp}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18bp}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75bp}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15bp}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14bp}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12bp}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5bp}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9bp}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875bp}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25bp}{\baselineskip}\selectfont}
 %%% ---- 章节标题设置 ----- %%%%
-\CTEXsetup[nameformat={\zihao{-2}\bfseries\raggedright},titleformat={\zihao{-2}\bfseries\centering},%
-                 number={\arabic{chapter}},name={,},afterskip={30pt},beforeskip={20pt}]{chapter}
-\CTEXsetup[format+={\zihao{3}\raggedright}]{section}
-\CTEXsetup[format+={\zihao{4}\raggedright}]{subsection}
-\CTEXsetup[format={\zihao{-4}\kaishu\raggedright}]{subsubsection}
-\CTEXoptions[bibname={\large 参考文献}]
+% 章标题 - 小二 / 黑体+Times New Roman
+% 正  文 - 四号 / 宋体+Times New Roman
+\CTEXsetup[format={\centering},titleformat={\heiti\xiaoerhao},nameformat={\heiti\xiaoerhao}]{chapter}
+\CTEXsetup[format={\raggedright\sihao},titleformat={\heiti\sihao},nameformat={\heiti\sihao}]{section}
+\CTEXsetup[format={\raggedright\wuhao},titleformat={\songti\wuhao},nameformat={\songti\wuhao}]{subsection}
+%\CTEXsetup[format={\zihao{-4}\kaishu\raggedright}]{subsubsection}
+\CTEXoptions[bibname={\xiaoerhao 参考文献}]
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 \RequirePackage[font=small,textfont=it]{caption}

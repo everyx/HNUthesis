@@ -10,7 +10,7 @@
 
 2. 三个 bat 文件用来生成和清理文件，作用见文件名，双击运行即可
 
-3. 编辑时请使用 UTF-8 编码
+3. 编辑时请使用 UTF-8 编码，建议使用 TexMaker 作为编辑器，下载地址 http://www.xm1math.net/texmaker/download.html#windows
 
 ### 感谢
 
