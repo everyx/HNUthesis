@@ -1,13 +1,11 @@
 % !Mode:: "TeX:UTF-8"
 %% 请使用 XeLaTeX 编译本文. 默认使用 Adobe 字体. 需安装 Adobe fonts 文件夹中的字体.
 
-\documentclass[forlib]{HNUthesis}   % 选项 forprint: 交付打印时, 建议加上此选项, 以消除彩色链接文字, 避免彩色字迹打印偏淡.
-                                    % 选项 forlib: 提交给图书馆的电子版, 需要加上选项 forlib, 以消除空白页和彩色链接.
+\documentclass[forprint]{HNUthesis}
 
 \bibliographystyle{abbrv}           % 参考文献样式,  plain,unsrt,alpha,abbrv 等等
 
 \graphicspath{{figures/}}           % 图片放在 figures 文件夹.
-
 
 \begin{document}
 
@@ -16,18 +14,17 @@
 \miji{绝密}           % 密级
 \xuehao{201408193}    % 学号
 
-\title{相对拓扑的若干性质研究}               % 论文名
-\Etitle{A \LaTeX~Thesis Template for HNU}   % 英文题目
-\author{高淑红}                             % 作者名
-\Csupervisor{卢涛\quad 教授}                % 指导教师中文名、职称
-\Cmajor{计算数学}                           % 专业中文名
-\Especiality{格上拓扑学}                    % 研究方向
-\date{二〇一五年三月}                       % 日期
+\title{相对拓扑的若干性质研究}                 % 论文名
+\Etitle{A \LaTeX~Thesis Template for HNU}    % 英文题目
+\author{高同学}                               % 作者名
+\Csupervisor{卢涛~教授}                       % 指导教师中文名、职称
+\Cmajor{计算数学}                             % 专业中文名
+\Especiality{格上拓扑学}                      % 研究方向
+\date{二〇一五年三月}                         % 日期
 
 \maketitle
 
-\include{includefile/frontmatter}    % 加入英文封面
-\include{includefile/midmatter}      % 加入中英文摘要.
+\include{includefile/frontmatter}    % 英文封面和摘要
 
 \pdfbookmark[0]{目录}{toc}
 \tableofcontents
@@ -83,7 +80,9 @@
 
 \end{thebibliography}
 
-
+\appendix
+\chapter{关于某某公式的补充证明} \label{sec}
+\section*{关于某某公式的补充证明}
 
 \backmatter
 \include{includefile/backmatter} %%%致谢, 武汉大学学位论文使用授权协议书．
