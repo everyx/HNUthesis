@@ -16,10 +16,28 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
+
+% ----- 定义字号，CTex 的存在误差 -------------%
+\newcommand{\chuhao}{\fontsize{42bp}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36bp}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28bp}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21bp}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18bp}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75bp}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15bp}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14bp}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12bp}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5bp}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9bp}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875bp}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25bp}{\baselineskip}\selectfont}
+
 %------------------------ Page layout ----------------------------------
 \hypersetup{pdfencoding=auto}
 \hypersetup{citecolor=magenta,linkcolor=blue}
 \RequirePackage[top=2.5cm,bottom=2.5cm,left=3.5cm,right=3cm]{geometry}    % 页面设置%
+% \setlength{\headheight}{1.5cm}
+% \setlength{\footskip}{1.75cm}
 
 \newtoks\fenleihao      %分类号
 \newtoks\xuexiaodaima   %学校代码
@@ -48,38 +66,38 @@
 
 %%%=== 封面 ===%%%
 \def\maketitle{%
-  \null
   \thispagestyle{empty}%
-  %\vspace*{-2cm}
-  \begin{center}\leavevmode
-    {\heiti \zihao{-4}%
+  \begin{center}
+    {\heiti\xiaosihao
+    \renewcommand{\arraystretch}{0.5}
     \begin{tabular}{llp{8cm}ll}
-      分\hfill 类\hfill 号： & \the\fenleihao \hfill & \hfill{} & 学\hfill 校\hfill 代\hfill 码： & \the\xuexiaodaima \hfill \\
-      密\hfill 级： & \the\miji \hfill & \hfill{} & 学\hfill 号： & \the\xuehao \hfill \\
+      分\hfill 类\hfill 号： & \the\fenleihao \hfill & \hfill{} & 学\hfill 校\hfill 代\hfill 码： & \the\xuexiaodaima \\
+      密\hfill 级： & \the\miji \hfill & \hfill{} & 学\hfill 号： & \the\xuehao \\
     \end{tabular}
-    }\\
+    }\par
     \vspace*{60pt} %插入空白
     \includegraphics[width=300pt]{HNU-logo.pdf}\\
     \vspace*{60pt}
-    {\songti \fontsize{50pt}{\baselineskip}\selectfont \textbf{硕士学位论文}}\\
+    {\songti \fontsize{50bp}{\baselineskip}\selectfont \bfseries{硕士学位论文}}\\
     \vspace{50pt}
-    {\heiti \zihao{2} \textbf{题~目：\underline{\@title}} \par}%
+    {\heiti\erhao\bfseries{题~目：\underline{\@title}} \par}%
     \vspace{50pt}
-%     \vfill
-    {\heiti\zihao{3} \textbf{
+    {\heiti\sanhao \bfseries{
+      \renewcommand{\arraystretch}{1.25}
       \begin{tabular}{lp{5.5cm}}
-        论文作者： & \@author \hfill \\ \cline{2-2}
-        指导教师： & \the\xuehao \hfill \\ \cline{2-2}
-        专业名称： & \the\Csupervisor \hfill \\ \cline{2-2}
-        研究方向： & \the\Cmajor \hfill \\ \cline{2-2}
+        论文作者： & \underline{\makebox[5.5cm][l]{\@author}} \\
+        指导教师： & \underline{\makebox[5.5cm][l]{\the\xuehao}} \\
+        专业名称： & \underline{\makebox[5.5cm][l]{\the\Csupervisor}} \\
+        研究方向： & \underline{\makebox[5.5cm][l]{\the\Cmajor}} \\
        \end{tabular}
       }
+      \renewcommand{\arraystretch}{1}
     }
     \par
 %    \vspace{48pt}
     \vfill
     {
-      {\songti \zihao{3} 淮北师范大学研究生处\\ \@date \par}%
+      {\songti \sanhao 淮北师范大学研究生处\\ \@date \par}%
     }
   \end{center}
 }
@@ -87,19 +105,19 @@
 %------------------------ Abstract & Keywords -------------------------
 \newcommand\cnabstractname{摘要}
 \newcommand\enabstractname{ABSTRACT}
-\newcommand\cnkeywords[1]{ {\bfseries\heiti\zihao{-4}\cnkeywordsname: }#1}
+\newcommand\cnkeywords[1]{ {\bfseries\heiti\xiaosihao\cnkeywordsname: }#1}
 \newcommand\cnkeywordsname{关键词}
-\newcommand\enkeywords[1]{ {\bfseries\heiti\zihao{-4}\enkeywordsname: }#1}
+\newcommand\enkeywords[1]{ {\bfseries\heiti\xiaosihao\enkeywordsname: }#1}
 \newcommand\enkeywordsname{Key words}
 
 \newenvironment{cnabstract}{
   \chapter*{\@title}   %%%终于解决了书签乱码的问题 2005-04-12.huangzh
-  \thispagestyle{empty}{\zihao{-4}\heiti\textbf{\cnabstractname：}\songti\@afterheading}
+  \thispagestyle{empty}{\xiaosihao\heiti\textbf{\cnabstractname：}\songti\@afterheading}
 }
 
 \newenvironment{enabstract}{
   \chapter*{\the\Etitle}
-  \thispagestyle{empty}{\zihao{-4}\heiti\textbf{\enabstractname: }\songti\@afterheading}
+  \thispagestyle{empty}{\xiaosihao\heiti\textbf{\enabstractname: }\songti\@afterheading}
 }
 
 %%------------------------常用宏包-----------------------------------
@@ -219,19 +237,6 @@
 \renewcommand{\contentsname}{目\quad 录}
 \newcommand\acknowledgement{\backmatter\chapter[致谢]{\ziju{2}致谢}}
 
-\newcommand{\chuhao}{\fontsize{42bp}{\baselineskip}\selectfont}
-\newcommand{\xiaochuhao}{\fontsize{36bp}{\baselineskip}\selectfont}
-\newcommand{\yihao}{\fontsize{28bp}{\baselineskip}\selectfont}
-\newcommand{\erhao}{\fontsize{21bp}{\baselineskip}\selectfont}
-\newcommand{\xiaoerhao}{\fontsize{18bp}{\baselineskip}\selectfont}
-\newcommand{\sanhao}{\fontsize{15.75bp}{\baselineskip}\selectfont}
-\newcommand{\xiaosanhao}{\fontsize{15bp}{\baselineskip}\selectfont}
-\newcommand{\sihao}{\fontsize{14bp}{\baselineskip}\selectfont}
-\newcommand{\xiaosihao}{\fontsize{12bp}{\baselineskip}\selectfont}
-\newcommand{\wuhao}{\fontsize{10.5bp}{\baselineskip}\selectfont}
-\newcommand{\xiaowuhao}{\fontsize{9bp}{\baselineskip}\selectfont}
-\newcommand{\liuhao}{\fontsize{7.875bp}{\baselineskip}\selectfont}
-\newcommand{\qihao}{\fontsize{5.25bp}{\baselineskip}\selectfont}
 %%% ---- 章节标题设置 ----- %%%%
 % 章标题 - 小二 / 黑体+Times New Roman
 % 正  文 - 四号 / 宋体+Times New Roman
