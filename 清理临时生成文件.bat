@@ -3,8 +3,8 @@
 @rem Public domain.
 
 set COMPILER=xelatex
-set TEMPFILE=*.aux *.log template.out *.thm *.tmp *.toc
-set TARGETFILE=*.gz template.pdf
+set TEMPFILE=*.aux *.log *.out *.thm *.tmp *.toc *.synctex
+set TARGETFILE=*.gz *.pdf
 
 goto clean
 
