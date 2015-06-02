@@ -4,11 +4,15 @@
 
 ### 使用方法【建议】
 
-1. 安装 MikTex，http://miktex.org/
+1. 安装 [MikTex](http://miktex.org/)，编辑器可以使用 [WinEdt](http://www.winedt.com/)
 
-2. 需要临时文件，双击运行目录下的两个 bat 脚本即可，方便一点
+2. Paper 模板推荐使用 PDFLaTex 编译，以获取在 windows 下更加的字体显示效果
 
-3. 编辑时请使用 UTF-8 编码
+3. Thesis 模板一定要使用 XeLaTex 编译（TODO: 使模板兼容 PDFLaTex）
+
+4. 编辑时请使用 UTF-8 编码
+
+5. 需要清除临时文件，双击运行目录下的两个 bat 脚本即可，方便一点
 
 ### 感谢
 
